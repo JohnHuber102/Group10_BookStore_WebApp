@@ -1,0 +1,24 @@
+The SpringApplication is a built in Spring Boot class that creates a servelet and hosts it and
+all that backend jazz. The run method is a static method inside the Spring Boot Class.
+Spring does a class path scan; you will @annotation inside of sub-classes so that when Spring
+Boot does a path scan it can tell what type or purpose of each sub-class it is.
+
+Controllers are marked with specific @annotations to help Spring Boot determine that it is in fact a
+controller object. The Controller is activated when a specific URL is accessed and inside the Controller class will
+exist methods that are supposed to run whenever the URL is accessed(which in turn triggers the Controller).
+Controllers are just the roadway to fetch and send data from front to backend. One controller per each
+component,for example a user controller.
+@RequestMapping: Default is set to the GET request
+- GET: is used to request data from a specified resource to the front end.
+- POST: is used to send data to a server/backend to create/update a resource.
+- PUT: is used to update data with items from the front sent to the server/backend
+- DELETE: is used to remove data specified by the front sent to the server/backend
+
+Create a separate java class to handle the logic for the items ingested by controllers and determines
+what controllers return.
+
+Spring Data JPA:
+- JPA(Java Persistence API): allows you to do Object-relational mapping
+- Object-Relational Mapping: meaning you can take your JSON objects generated from the front end, and parse it automatically without expensive queries to shunt them into the correct tables & fields
+
+Entity manager creates a database for you in java fashion, look up Hibernate API(Hibernate is packaged with Spring Data JPA).
