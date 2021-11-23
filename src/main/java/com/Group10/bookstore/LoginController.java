@@ -1,56 +1,23 @@
-package com.Group10.bookstore;
+package com.Group10.bookstore.Users;
 
-import java.util.Collection;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
 
-public class User {
-    public String username;
-    public String password;
 
-    private User user;
+@RestController
+public class LoginController {
+    public User user;
 
-    public void CustomUserDetails(User user) {
-        this.user = user;
+    @RequestMapping(value = "/login")
+    public String login(){
+        return "Login Screen";
     }
 
 
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
 
-
-    public String getPassword() {
-        return user.getPassword();
-    }
-
-
-    public String getUsername() {
-        return user.getEmail();
-    }
-
-
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-
-    public boolean isEnabled() {
-        return true;
-    }
-
-    public String getFullName() {
-        return user.getFirstName() + " " + user.getLastName();
+    public String login(@RequestBody User user) {
+        user = user;
+        return "Success";
     }
 
 }
